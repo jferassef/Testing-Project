@@ -1,0 +1,2 @@
+id;result;time;exception
+0;FAILURE;0;java.lang.NoClassDefFoundError
