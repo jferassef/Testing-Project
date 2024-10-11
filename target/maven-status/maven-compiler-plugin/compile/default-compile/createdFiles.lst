@@ -1,3 +1,7 @@
+utils\DocumentHelper$1.class
 steps\ActionSteps.class
 pages\LoginPage.class
+steps\ApiSteps.class
+utils\DocumentHelper.class
 Constants.class
+utils\GestorDescargas.class

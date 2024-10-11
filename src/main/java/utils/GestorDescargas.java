@@ -27,14 +27,15 @@ public class GestorDescargas {
         return LeerPDF.leerContenidoPDF(archivoPDF);
     }
 
+
     public void leerExcel(File archivoExcel) throws IOException {
-        LeerExcel.leerContenidoExcel(archivoExcel);
+       new DocumentHelper().leerContenidoExcel(archivoExcel);
     }
 
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws InterruptedException, IOException {  //@ q es la IOException
         // Configurar Selenium y el directorio de descargas
         String rutaDescargas = "C:/ruta/de/descargas";
-        WebDriver driver = SeleniumDescargasConfig.configurarChromeConDescargas(rutaDescargas);
+        WebDriver driver = new DocumentHelper().configurarChromeConDescargas(rutaDescargas);
 
         GestorDescargas gestor = new GestorDescargas(driver, rutaDescargas);
 
@@ -55,7 +56,7 @@ public class GestorDescargas {
         // Cerrar el driver
         driver.quit();
     }
-
      */
+
 }
 

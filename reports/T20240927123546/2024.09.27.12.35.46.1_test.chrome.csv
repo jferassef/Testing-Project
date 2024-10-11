@@ -1,0 +1,2 @@
+id;browser;result;time;exception
+0;chrome;FAILURE;7;org.openqa.selenium.NoSuchWindowException

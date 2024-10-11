@@ -1,5 +1,7 @@
 package utils;
 
+import com.amaris.automation.model.testing.UserStory;
+import com.amaris.automation.model.testing.objects.PageObject;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -12,19 +14,19 @@ import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.Map;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import java.io.File;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
-import java.io.File;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.IOException;
 
 
 
-public class DocumentHelper {
+public class DocumentHelper extends PageObject {
+    public DocumentHelper(UserStory userS) {
+        super(userS);
+    }
     public static WebDriver configurarChromeConDescargas(String rutaDescargas) {
         // Configuración para Chrome
         ChromeOptions options = new ChromeOptions();
@@ -39,8 +41,7 @@ public class DocumentHelper {
         options.setExperimentalOption("prefs", prefs);
 
         // Inicializar el WebDriver con las opciones
-        WebDriver driver = new ChromeDriver(options);
-        return driver;
+        return new ChromeDriver(options);
     }
 
 
@@ -49,7 +50,7 @@ public class DocumentHelper {
             driver.get(url);
 
             // Hacer clic en el botón o enlace para descargar
-            driver.findElement(By.xpath(xpathElemento)).click();
+            driver.findElement(By.cssSelector(xpathElemento)).click();
         }
 
         public static File esperarArchivoDescargado(String rutaDescargas, String nombreArchivo, int timeoutSegundos) throws InterruptedException {

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: test.DownloadDocumentTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.741 s <<< FAILURE! - in test.DownloadDocumentTest
+pruebaDocumentoDescargas(test.DownloadDocumentTest)  Time elapsed: 0.113 s  <<< FAILURE!
+java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+	at test.DownloadDocumentTest.pruebaDocumentoDescargas(DownloadDocumentTest.java:14)
+
